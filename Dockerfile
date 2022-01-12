@@ -1,7 +1,7 @@
 ARG distro=stable-slim
 FROM debian:${distro}
 
-ARG dl_url="https://web-builds.airdcpp.net/stable/airdcpp_latest_master_64-bit_portable.tar.gz"
+ARG dl_url="https://web-builds.airdcpp.net/stable/airdcpp_latest_master_armhf_portable.tar.gz"
 
 RUN installDeps=' \
         curl \
