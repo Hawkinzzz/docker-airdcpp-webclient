@@ -1,5 +1,5 @@
 ARG distro=stable-slim
-FROM debian:${distro}
+FROM --platform=linux/arm64 debian:${distro}
 
 ARG dl_url="https://web-builds.airdcpp.net/stable/airdcpp_latest_master_armhf_portable.tar.gz"
 
