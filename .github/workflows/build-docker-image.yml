@@ -143,9 +143,9 @@ jobs:
         env:
           DOCKER_CLI_EXPERIMENTAL: enabled
         run: |
-          IMAGE=${{ matrix.registry }}/${GITHUB_REPOSITORY}
-          TAG=${GITHUB_REF//refs\/heads\//}
-          SOURCE=${IMAGE}:${TAG}-${GITHUB_SHA:0:7}-${GITHUB_RUN_NUMBER}
+          IMAGE=${{ matrix.registry }}/${{ secrets.DOCKER_USER }}/airdcpp
+          TAG=latest
+          SOURCE=${IMAGE}:${TAG}
           VERSION=${{ needs.build.outputs.version }}
           BRANCH=${{ needs.build.outputs.branch }}
           [[ -f linux-amd64.Dockerfile ]]  && AMD64=${SOURCE}-linux-amd64
