@@ -71,8 +71,8 @@ jobs:
           echo ::set-output name=vendor::${{ secrets.DOCKER_USER }}
           echo ::set-output name=url::${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/blob/master/README.md
           echo ::set-output name=platform::${ARCHITECTURE//-/\/}
-          echo ::set-output name=cache::airdcpp:latest
-          echo ::set-output name=tag::airdcpp:latest
+          echo ::set-output name=cache::${{ secrets.DOCKER_USER }}/airdcpp:latest
+          echo ::set-output name=tag::${{ secrets.DOCKER_USER }}/airdcpp:latest
           VERSION=$(jq -r '.version // empty' < VERSION.json)
           if [[ -z ${VERSION} ]]; then
             VERSION=$(date +"%Y%m%d%H%M%S")
